@@ -76,4 +76,6 @@ elif resposta != "sim" and resposta != "não":
                 continue
             else:
                 break
+    elif resposta == "não":
+        print ("ok, adeus")
     
