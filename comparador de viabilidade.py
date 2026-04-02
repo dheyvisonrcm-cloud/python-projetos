@@ -2,38 +2,65 @@
 print ("gasolina vs álcool")
 resposta = input("está pronto para começar?").lower()
 if resposta == "sim":
-    gasolina = float(input("digite o preço da gasolina:"))
-    if gasolina <= 0:
-        print(("preço da gasolina inválido, por favor digite um valor maior que zero."))
+    try:
         gasolina = float(input("digite o preço da gasolina:"))
         if gasolina <= 0:
-            print ("preço da gasolina inválido, por favor digite um valor maior que zero.")
-            while True:
+            print(("preço da gasolina inválido, por favor digite um valor maior que zero."))
+            gasolina = float(input("digite o preço da gasolina:"))
+            if gasolina <= 0:
+                print ("preço da gasolina inválido, por favor digite um valor maior que zero.")
+                while True:
+                    gasolina = float(input("digite o preço da gasolina:"))
+                    if gasolina <= 0:
+                        print ("preço da gasolina inválido, por favor digite um valor maior que zero.")
+                        continue
+                    else:
+                        break
+        elif gasolina > 0:
+            pass
+    except ValueError:
+        print(("entrada inválida, por favor digite um número."))
+        while True:
+            try:
                 gasolina = float(input("digite o preço da gasolina:"))
                 if gasolina <= 0:
                     print ("preço da gasolina inválido, por favor digite um valor maior que zero.")
                     continue
                 else:
                     break
-        elif gasolina > 0:
-            pass
-    
-    
-    álcool = float(input("digite o preço do álcool:"))
-    if álcool <= 0:
-        resposta = print(("preço do álcool inválido, por favor digite um valor maior que zero."))
+            except ValueError:
+                print ("entrada inválida, por favor digite um número.")
+                continue
+    try:
         álcool = float(input("digite o preço do álcool:"))
         if álcool <= 0:
-            print ("preço do álcool inválido, por favor digite um valor maior que zero.")
-            while True:
+            print(("preço do álcool inválido, por favor digite um valor maior que zero."))
+            álcool = float(input("digite o preço do álcool:"))
+            if álcool <= 0:
+                print ("preço do álcool inválido, por favor digite um valor maior que zero.")
+                while True:
+                    álcool = float(input("digite o preço do álcool:"))
+                    if álcool <= 0:
+                        print ("preço do álcool inválido, por favor digite um valor maior que zero.")
+                        continue
+                    else:
+                        break
+        elif álcool > 0:
+         pass    
+
+    except ValueError:
+        print ("entrada inválida, por favor digite um número.")
+        while True:
+            try:
                 álcool = float(input("digite o preço do álcool:"))
                 if álcool <= 0:
                     print ("preço do álcool inválido, por favor digite um valor maior que zero.")
                     continue
                 else:
                     break
-        elif álcool > 0:
-            pass
+            except ValueError:
+                print ("entrada inválida, por favor digite um número.")
+                continue
 
     
     resultado = álcool / gasolina

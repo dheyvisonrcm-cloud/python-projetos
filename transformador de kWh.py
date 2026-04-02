@@ -17,7 +17,7 @@ if resposta == "sim":
         pass
     except ValueError:
         print ("entrada inválida, por favor digite um número.")
-        while True:        
+        while True:    
             try:
                 consumo = float(input("digite a quantidade de kWh consumida:"))
                 if consumo <= 0:
